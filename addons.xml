@@ -41,7 +41,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.zappntv" name="Zappn TV" version="1.2.4" provider-name="fayer3">
+<addon id="plugin.video.zappntv" name="Zappn TV" version="1.2.5" provider-name="fayer3">
     <requires>
         <import addon="xbmc.python" version="2.25.0"/>
         <import addon="script.module.routing" version="0.2.0"/>
@@ -73,7 +73,9 @@
 - hinzufügen von favoriten repariert.
 1.2.4:
 - Neue Sender Hinzugefügt.
-- Abspielen von livestreams mit Python3 repariert.</news>
+- Abspielen von livestreams mit Python3 repariert.
+1.2.5:
+- Livestream Abschnitt behoben, wenn ein Stream kein Epg hat.</news>
         <assets>
             <icon>resources/icon.png</icon>
             <fanart>resources/fanart.png</fanart>
