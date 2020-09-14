@@ -1,0 +1,79 @@
+v0.0.1
+- Initial version
+v0.1.0
+- First Release
+v0.1.1
+- fix limit of 25 tvshows
+v0.2.0
+- added EPG
+- added JOYN Favorites
+- added search
+- fix name of some TV shows
+- fix VOD on lebreelec
+v0.2.1
+- fix Favorites for not available TV shows
+v0.2.2:
+- fix livestreams of channels with umlaut
+- fix listing of livestreams
+- add option for showing preview image instead of logo of livestreams
+- add option for showing show details in label of livestreams
+v0.2.3
+- remove wrong error message
+v0.2.4
+- adapt paths for new routing plugin version, some old favourites might not work any more
+v0.2.5:
+- add option to show season/episode number of videos in title.
+- fix error with live streams
+v0.2.6
+- fix loading of categories without items
+v0.2.7:
+- fix error with dates and times of episodes on "OSMC"
+v0.3.0:
+- update to new API
+v0.4.0:
+- fixed requests, if there updates to JOYN, this Addon should still work
+- check for JOYN Updates on startup, to warn the user, that there might be problems
+- Plus+ content can set to be hidden. Playback of this content is not possible, because Logins are not supported yet.
+v0.4.1:
+- fix typo when showing livestreams without EPG
+- update request to joyn app 5.3.1
+- show empty folder when favorite is not available any more
+v0.4.2:
+- show a timer if a livestream requires a commercial to be watched
+- Debug Log is now automatically active if Kodi 'debug logging' is active
+v0.4.3:
+- try to play videos, even if some not important requests fail, because of SSL errors.
+v0.4.4:
+- fix typo that prevented preview images for livestreams to work
+- fix EPG, but it is now limited to the next 25 entries
+v0.4.5:
+- try to fix extras for series (not tested)
+- add setting to show recommendations for a series
+- add setting to show age rating in the video description
+- add setting to show copyright information in the video description
+v0.4.6:
+- changed video requests to the new method
+  - some videos/livestreams now work outside Germany without IP spoofing
+- for livestreams it is now checked how many commercials are before the stream, and waited accordingly
+v0.4.7:
+- replaced non working IP spoofing with request over proxy, only the access token is requested over the proxy
+  - only http/https proxies are supported, because I couldn't get SOCKS4/SOCKS5 to run
+  - a proxy is automatically fetched with gimmeproxy.com or pubproxy.com 
+    - additional proxy request sites can be added in the addon settings
+  - it is also possible to use a custom proxy
+- added an option to request a new access token on the next video request
+v0.4.8:
+- fixed issue if no proxies are available to fetch
+v0.4.9:
+- reworked proxy checking:
+  - fixed bug, which skipped proxies
+  - fixed bug, which marked bad proxies as good
+  - a dialog is now shown while checking proxies
+  - added two additional proxy sites
+v0.4.10:
+- fix error when getting proxies from 'freshproxies.net'
+v0.4.11:
+- fix error that prevented retrieving of videos.
+- added available since/until to movie description.
+v0.4.12:
+- fixed VOD request thanks to hrickes.
