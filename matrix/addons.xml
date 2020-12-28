@@ -54,11 +54,11 @@
     </extension>
 </addon>
 
-    <addon id="repository.fayer3.matrix" name="fayer3's Addon Repo" version="1.0.0" provider-name="fayer3">
+    <addon id="repository.fayer3.matrix" name="fayer3's Addon Repo for Matrix" version="1.0.0" provider-name="fayer3">
         <requires>
             <import addon="xbmc.addon" version="12.0.0"/>
         </requires>
-        <extension point="xbmc.addon.repository" name="fayer3's Addon Repo">
+        <extension point="xbmc.addon.repository" name="fayer3's Addon Repo for Matrix">
             <info compressed="false">https://raw.githubusercontent.com/fayer3/fayer3-kodi-repository/master/matrix/addons.xml</info>
             <checksum>https://raw.githubusercontent.com/fayer3/fayer3-kodi-repository/master/matrix/addons.xml.md5</checksum>
             <datadir zip="true">https://raw.githubusercontent.com/fayer3/fayer3-kodi-repository/master/matrix/</datadir>
