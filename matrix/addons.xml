@@ -1,5 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
+<addon id="plugin.video.joyn_app" name="Joyn" version="0.4.16+matrix.1" provider-name="fayer3">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.routing" version="0.2.3+matrix.1"/>
+        <import addon="script.module.inputstreamhelper" version="0.5.2+matrix.1"/>
+        <import addon="script.module.pytz" version="2019.3.0+matrix.1"/>
+        <import addon="script.module.tzlocal" version="2.0.0+matrix.1"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.python.library" library="favorite.py"/>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="de_DE">JOYN Levestream und Mediathek</summary>
+        <description lang="de_DE">Bietet die inhalte von joyn.de, basierend auf der Android App</description>
+        <disclaimer lang="de_DE">Die von diesem Addon dargestellten Inhalte werden von den Erstellern des Addons weder gehostet oder verbreitet, noch stehen die Ersteller in irgendeiner Beziehung zu den Anbietern des Inhalts.</disclaimer>
+        <summary lang="en_GB">JOYN Levestream and Mediathek</summary>
+        <description lang="en_GB">Gives access to the content of joyn.de, based on the Android app</description>
+        <disclaimer lang="en_GB">The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content providers.</disclaimer>
+        <language></language>
+        <platform>all</platform>
+        <license>GPL-3.0</license>
+        <forum>https://www.kodinerds.net/index.php/Thread/66455-Release-ZAPPN-TV/</forum>
+        <website>https://joyn.de/</website>
+        <email>fb4472 (at) aon.at</email>
+        <source>https://github.com/fayer3/plugin.video.zappntv</source>
+        <news>0.4.0:
+- Abfragen repariert, bei einem Update, sollte das Addon trotzdem weiter funktionieren
+- Addon checkt nun, ob es Updates von JOYN gibt, und warnt den Benutzer, dass es Probleme geben könnte.
+- Plus+ Inhalte können verborgen werden. Abspielen funktioniert nicht, weil momentan keine Logins unterstützt werden.
+0.4.1:
+- schreibfehler ausgebessert, der das anzeigen von livestreams ohne EPG verhindert hat.
+- Serveranfragen nun equivalent zu joyn Android app 5.3.1
+- wenn ein Favorit nun nicht mehr verfügbar ist, wird nun ein leerer Ordner angezeigt.
+0.4.2:
+- zeige einen Timer, wenn ein Livestream das anschauen eines Werbespots verlangt.
+- Debug Log nun automatisch aktiviert, wenn von Kodi 'Debug-Logging' aktiv ist.
+0.4.3:
+- versuche videos abzuspielen, auch wenn einige nicht wichtige Anfragen, wegen SSL Fehlern, fehlschlagen.
+0.4.4:
+- schreibfehler ausgebessert der das Anzeigen von Livestream Vorschaubildern verhindert hat.
+- EPG repariert, aber nun limitiert auf ca. die nächsten 25 Einträge.
+0.4.5:
+- Versuch Extras zu reparieren (nicht getested)
+- Einstellung hinzugefügt, um Empfehlungen zu einer Serien zu erhalten
+- Einstellung hinzugefügt, um Altersfreigabe in der Videobeschreibung anzuzeigen
+- Einstellung hinzugefügt, um Copyright in der Videobeschreibung anzuzeigen
+0.4.6:
+- video abfrage auf die neue methode abgeändert
+  - einige videos/livestreams gehen nun auch ohne IP Spoofing auserhalb Deutschlands
+- bei Livestreams wird nun erkannt wie viele Werbungen vor dem Stream sind, und entsprechend gewartet.
+0.4.7:
+- nicht mehr funktionierendes IP Spoofing durch anfrage über Proxy ersetzt
+  - es werden nur http/https Proxies unterstützt, weil ich SOCKS4/SOCKS5 nicht zum laufen gebracht habe
+  - es wird automatisch ein Proxy von gimmeproxy.com oder pubproxy.com abgerufen
+    - weitere Proxy Abfrageseiten können über die Addoneinstellungen hinzugefügt werden
+  - es kann auch manuell ein Proxy angegeben werden
+- option hinzugefügt, um einen neuen Zugriffstoken bei der nächsten Video Abfrage abzufragen
+0.4.8:
+- Fehler behoben, wenn keine Proxies zum abfragen vorhanden sind
+0.4.9:
+- Proxy Abruf überarbeitet:
+  - Fehler behoben, welcher Proxies übersprungen hat
+  - Fehler behoben, welcher nicht funktionierende Proxies als gut eingestuft hat
+  - es wird nun ein Dialog angezeigt, welcher Proxy gerade überprüft wird
+  - zwei weiter webseiten zum Proxy abrufen hinzugefügt
+0.4.10:
+- fehler mit Proxy abrufen von 'freshproxies.net' behoben
+0.4.11:
+- fehler behoben der abrufen von Videos verhindert hat.
+- verfügbar seit/bis zu Filmbeschreibungen hinzugefügt.
+0.4.12:
+- VOD Abfrage repariert dank hrickes.
+0.4.13:
+- ändernder VOD Abfrage zu der vom Server erhaltenen, dies limitiert tie Auflösung auf SD ohne Plus+.
+0.4.14:
+- beheben von padding Fehler.
+0.4.15:
+- wiedergabe von livestreams behoben
+0.4.16:
+- update auf den stand von Android app 5.18.1
+- support für Sport videos hinzugefügt
+- support für 'Themen für dich' hinzugefügt
+- support für Serien, Filme und Sport entdecken hinzugefügt
+        </news>
+        <assets>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.png</fanart>
+            <screenshot>resources\screenshot-01.jpg</screenshot>
+            <screenshot>resources\screenshot-02.jpg</screenshot>
+            <screenshot>resources\screenshot-03.jpg</screenshot>
+        </assets>
+    </extension>
+</addon>
+
 <addon id="plugin.video.zappntv" name="Zappn TV" version="1.3.4+matrix.1" provider-name="fayer3">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
